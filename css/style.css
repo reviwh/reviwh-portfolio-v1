@@ -19,13 +19,6 @@
     --white-text: #fff
 }
 
-.light-mode {
-    --bg-color: #cee;
-    --second-bg-color: #f0ffff;
-    --text-color: #2a4348;
-    --main-color: #448a93;
-}
-
 *::selection {
     background: var(--main-color);
     color: var(--bg-color);

@@ -23,6 +23,8 @@ window.onscroll = () => {
         document
           .querySelector("header nav a[href*=" + id + "]")
           .classList.add("active");
+        menuIcon.classList.remove("bx-x");
+        navbar.classList.remove("active");
       });
     }
   });
@@ -45,59 +47,17 @@ ScrollReveal().reveal(
 );
 ScrollReveal().reveal(".home-content h1, .about-img", { origin: "left" });
 ScrollReveal().reveal(".home-content p, .about-content", { origin: "right" });
+
 /*==================== typed js ====================*/
 const typed = new Typed(".multiple-text", {
-  strings: ["Student"],
+  strings: [
+    "Student",
+    "Junior Web Developer",
+    "Software Enginner",
+    "Bangkit Cohort 2023",
+  ],
   typeSpeed: 100,
-  backSpeed: 100,
+  backSpeed: 150,
   backDelay: 1000,
   loop: true,
-});
-
-/*==================== light mode ====================*/
-iconTheme = document.querySelector("#icon-theme");
-body = document.querySelector("body");
-iconTheme.onclick = () => {
-  body.classList.toggle("light-mode");
-  iconTheme.classList.toggle("bxs-sun");
-  toggleImage();
-};
-
-function toggleImage() {
-  const heroImage = document.querySelector(".hero-image img");
-  const aboutImage = document.querySelector(".about-img img");
-
-  if (heroImage.src.endsWith("images/hero.png")) {
-    heroImage.src = "images/hero-light.png";
-    aboutImage.src = "images/about-light.png";
-    console.log(heroImage.src);
-  } else {
-    heroImage.src = "images/hero.png";
-    aboutImage.src = "images/about.png";
-  }
-}
-
-/*==================== light mode ====================*/
-const scriptURL =
-  "https://script.google.com/macros/s/AKfycbzyVNBDK2apf7wWHrgg85aeytdc8fiLl-7GPznPOAcvpW6NCUcEO0UFdVbNQWVhkaET_A/exec";
-const form = document.forms["contact-form"];
-const msg = document.querySelector("#msg");
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  fetch(scriptURL, { method: "POST", body: new FormData(form) })
-    .then((response) => {
-      msg.innerHTML = "Message sent successfully";
-      setTimeout(() => {
-        msg.style.opacity = "1";
-      }, 500);
-      setTimeout(() => {
-        msg.innerHTML = "";
-      }, 4000);
-      setTimeout(() => {
-        msg.style.opacity = "0";
-      }, 3500);
-      form.reset();
-    })
-    .catch((error) => console.error("Error!", error.message));
 });
