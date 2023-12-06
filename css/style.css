@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
+@font-face {
+    font-family: boxicons;
+    font-style: normal;
+    src: url(https://unpkg.com/boxicons@2.1.4/fonts/boxicons.woff2) format('woff2');
+    font-display: swap;
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -102,6 +109,8 @@ section {
 
 .hero-image img {
     width: 35vw;
+    height: auto;
+    object-fit: contain;
     animation: floatImage 4s ease-in-out infinite;
 }
 
@@ -190,6 +199,8 @@ span {
 
 .about-img img {
     width: 35vw;
+    height: auto;
+    object-fit: contain;
 }
 
 .heading {
@@ -279,6 +290,7 @@ span {
 
 .portfolio-box img {
     width: 100%;
+    height: auto;
     object-fit: cover;
 }
 

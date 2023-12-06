@@ -1,22 +1,22 @@
 /*==================== toggle icon navbar ====================*/
-let menuIcon = document.querySelector("#menu-icon");
-let navbar = document.querySelector(".navbar");
-
-menuIcon.onclick = () => {
+const menuIcon = document.querySelector("#menu-icon");
+const navbar = document.querySelector(".navbar");
+const handleClick = () => {
   menuIcon.classList.toggle("bx-x");
   navbar.classList.toggle("active");
 };
+menuIcon.addEventListener("click", handleClick);
 
 /*==================== scroll sections active link ====================*/
-let sections = document.querySelectorAll("section");
-let navLink = document.querySelectorAll("header nav a");
+const sections = document.querySelectorAll("section");
+const navLink = document.querySelectorAll("header nav a");
 
-window.onscroll = () => {
+const handleScroll = () => {
   sections.forEach((sec) => {
-    let top = window.scrollY;
-    let offset = sec.offsetTop - 150;
-    let height = sec.offsetHeight;
-    let id = sec.getAttribute("id");
+    const top = window.scrollY;
+    const offset = sec.offsetTop - 150;
+    const height = sec.offsetHeight;
+    const id = sec.getAttribute("id");
     if (top >= offset && top < offset + height) {
       navLink.forEach((links) => {
         links.classList.remove("active");
@@ -28,18 +28,21 @@ window.onscroll = () => {
       });
     }
   });
-  let header = document.querySelector("header");
+  const header = document.querySelector("header");
   header.classList.toggle("sticky", window.scrollY > 100);
 };
+
+window.addEventListener("scroll", handleScroll);
 
 /*==================== scroll reveal ====================*/
 ScrollReveal({
   distance: "80px",
   duration: 2000,
   delay: 200,
+  interval: 100,
 });
 
-ScrollReveal().reveal(".home-content, .heading", { origin: "top" });
+ScrollReveal().reveal(".home-content, .heading");
 ScrollReveal().reveal(
   ".hero-image, .skills-container, .portfolio-box, .contact form",
   { origin: "bottom" }

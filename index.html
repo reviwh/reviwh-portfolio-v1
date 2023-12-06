@@ -4,25 +4,53 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="canonical" href="https://reviwh.github.io/reviwh-portfolio-v1.00/" />
-    <meta name="description" content="Revi Wardana Putra's portfolio">
-    <meta name="keywords" content="web developer, portfolio, Revi Wardana Putra, web design, coding, mobile developer, flutter, kotlin">
+    <link
+      rel="canonical"
+      href="https://reviwh.github.io/reviwh-portfolio-v1.00/"
+    />
+    <meta name="description" content="Revi Wardana Putra's portfolio" />
+    <meta
+      name="keywords"
+      content="web developer, portfolio, Revi Wardana Putra, web design, coding, mobile developer, flutter, kotlin"
+    />
     <title>Revi Wardana Putra | Portofolio</title>
 
     <!-- box icons -->
     <link
+      rel="preload"
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    /></noscript>
 
     <!-- custom css -->
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="shortcut icon" href="./logo.ico" type="image/x-icon">
+    <link
+      rel="preload"
+      href="css/style.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="css/style.css" /></noscript>
+
+    <!-- icon -->
+    <link rel="shortcut icon" href="./logo.ico" type="image/x-icon" />
+
+    <!-- preload -->
+    <link
+      rel="preload"
+      as="font"
+      href="https://unpkg.com/boxicons@2.1.4/fonts/boxicons.woff2"
+      type="font/woff2"
+      crossorigin
+    />
   </head>
 
   <body>
-    <!-- mode -->
-    </div>
     <!-- header design -->
     <header class="header">
       <a href="#" class="logo">Revi Wardana Putra</a>
@@ -33,34 +61,37 @@
         <a href="#skills">Skills</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
-    </nav>
+      </nav>
     </header>
+
     <!-- hero section design -->
     <section class="home" id="home">
       <div class="home-content">
         <h3>Hello, It's me</h3>
-        <h1 Revi Wardana Putra</h1>
+        <h1>Revi Wardana Putra</h1>
         <h3>And I'am a <span class="multiple-text"></span></h3>
         <p>
           I am an IT enthusiast with high ambition in developing myself in the
           field of information technology.
         </p>
         <div class="social-media">
-          <a href="https://web.facebook.com/reviwh">
+          <a href="https://web.facebook.com/reviwh" aria-label="facebook">
             <i class="bx bxl-facebook"></i>
           </a>
-          <a href="https://www.instagram.com/reviwh_">
+          <a href="https://www.instagram.com/reviwh_" aria-label="instagram">
             <i class="bx bxl-instagram"></i>
           </a>
-          <a href="https://www.linkedin.com/in/revi-wardana-putra-5b207a229/">
+          <a
+            href="https://www.linkedin.com/in/revi-wardana-putra-5b207a229/"
+            aria-label="linkedin"
+          >
             <i class="bx bxl-linkedin"></i>
           </a>
-          <a href="https://github.com/reviwh">
+          <a href="https://github.com/reviwh" aria-label="github">
             <i class="bx bxl-github"></i>
           </a>
-          </a>
-          <a href="mailto:reviwh2@gmail.com">
-            <i class='bx bxl-gmail'></i>
+          <a href="mailto:reviwh2@gmail.com" aria-label="email">
+            <i class="bx bxl-gmail"></i>
           </a>
         </div>
         <a
@@ -70,23 +101,27 @@
         >
       </div>
       <div class="hero-image">
-        <img src="images/hero.png" alt="" />
+        <img src="images/hero.webp" width="425" height="425" alt="" />
       </div>
     </section>
+
     <!-- about section design -->
     <section class="about" id="about">
       <div class="about-img">
-        <img src="./images/about.png" alt="" />
+        <img src="./images/about.webp" alt="" width="425" height="425" />
       </div>
       <div class="about-content">
         <h2 class="heading">About <span>Me</span></h2>
         <!-- <h3>Student!</h3> -->
         <p>
-          As a college student majoring in information technology, I am driven to apply my knowledge and skills in a professional setting. I am seeking opportunities that will allow me to gain hands-on experience, contribute to the field, and further develop my technical expertise.
+          As a college student majoring in information technology, I am driven
+          to apply my knowledge and skills in a professional setting. I am
+          seeking opportunities that will allow me to gain hands-on experience,
+          contribute to the field, and further develop my technical expertise.
         </p>
-        <a href="https://www.cakeresume.com/s--1uE1J1IZEe45knvukbsUyQ--/revi-wardana" class="btn" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer">Read More</a>
       </div>
     </section>
+
     <!-- skills section design -->
     <section id="skills" class="skills">
       <h2 class="heading">Obtained <span>Skills</span></h2>
@@ -102,12 +137,13 @@
           <p>Adobe Illustrator, Figma</p>
         </div>
         <div class="skills-box">
-          <i class='bx bxl-flutter' ></i>
+          <i class="bx bxl-flutter"></i>
           <h3>Flutter</h3>
           <p>Web, Mobile, Dekstop</p>
         </div>
       </div>
     </section>
+
     <!-- portfolio section design -->
     <section class="portfolio" id="portfolio">
       <h2 class="heading">Latest <span>Project</span></h2>
@@ -123,21 +159,22 @@
           </div>
         </div> -->
         <div class="portfolio-box">
-          <img src="./images/baron.png" alt="" />
+          <img src="./images/baron.webp" alt="" width="314" height="209" />
           <div class="portfolio-layer">
             <h4>Desktop (Flutter)</h4>
-            <p>
-              Reservation app for canteen of university.
-            </p>
+            <p>Reservation app for canteen of university.</p>
             <a
               href="https://github.com/reviwh/baron-barak-online"
-              target="_blank" rel="noopener noreferrer">
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="github repository"
+            >
               <i class="bx bx-link-external"></i>
             </a>
           </div>
         </div>
         <div class="portfolio-box">
-          <img src="./images/seabook.png" alt="" />
+          <img src="./images/seabook.webp" alt="" width="314" height="209" />
           <div class="portfolio-layer">
             <h4>Mobile (Design)</h4>
             <p>
@@ -145,20 +182,28 @@
             </p>
             <a
               href="https://www.figma.com/proto/xlb6oVZx6xV5eScioFf4Qr/SeaBook?type=design&node-id=1-2&scaling=scale-down&page-id=1%3A2&starting-point-node-id=1%3A2"
-              target="_blank" rel="noopener noreferrer">
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="play figma portfolio"
+            >
               <i class="bx bx-link-external"></i>
             </a>
           </div>
         </div>
       </div>
     </section>
+
     <!-- contact section design -->
     <section class="contact" id="contact">
       <h2 class="heading">Contact <span>Me</span></h2>
       <form name="contact-form">
         <div class="input-box">
           <input name="Name" type="text" placeholder="Name" />
-          <input name="Email Address" type="email" placeholder="Email Address" />
+          <input
+            name="Email Address"
+            type="email"
+            placeholder="Email Address"
+          />
           <input name="Email Subject" type="text" placeholder="Email Subject" />
         </div>
         <textarea
@@ -172,24 +217,26 @@
       </form>
       <h2 id="msg"></h2>
     </section>
+
     <!-- footer design -->
     <footer class="footer">
       <div class="footer-text">
         <p>Copyright &copy; 2023 by Revi Wardana Putra | All Rights Reserved</p>
       </div>
       <div class="footer-icon-top">
-        <a href="#home">
+        <a href="#home" aria-label="scroll to top">
           <i class="bx bx-up-arrow-alt"></i>
         </a>
       </div>
     </footer>
+
     <!-- scroll reveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 
     <!-- typed js -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
     <!-- custom js -->
-    <script src="js/script.js"></script>
+    <script src="js/script.min.js"></script>
   </body>
 </html>
