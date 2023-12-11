@@ -5,7 +5,7 @@
     font-style: normal;
     src: url(https://unpkg.com/boxicons@2.1.4/fonts/boxicons.woff2) format('woff2');
     font-display: swap;
-  }
+}
 
 * {
     margin: 0;
@@ -110,6 +110,7 @@ section {
 .hero-image img {
     width: 35vw;
     height: auto;
+    aspect-ratio: auto 1/1;
     object-fit: contain;
     animation: floatImage 4s ease-in-out infinite;
 }
@@ -200,6 +201,7 @@ span {
 .about-img img {
     width: 35vw;
     height: auto;
+    aspect-ratio: auto 1/1;
     object-fit: contain;
 }
 
@@ -291,6 +293,7 @@ span {
 .portfolio-box img {
     width: 100%;
     height: auto;
+    aspect-ratio: auto 314/209;
     object-fit: cover;
 }
 
@@ -426,7 +429,7 @@ span {
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-	width: .5rem;
+    width: .5rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -434,12 +437,12 @@ span {
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: var(--main-color);
-	border-radius: .5rem;
+    background-color: var(--main-color);
+    border-radius: .5rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background-color: var(--main-color-hover);
+    background-color: var(--main-color-hover);
 }
 
 /* BREAKPOINTS */
@@ -542,7 +545,7 @@ span {
     .about {
         display: flex;
         flex-direction: column-reverse;
-        justify-content:center;
+        justify-content: center;
         text-align: center;
         padding: 4rem;
     }
@@ -579,7 +582,7 @@ span {
 
     ::-webkit-scrollbar {
         width: 0;
-    }    
+    }
 
 }
 
