@@ -17,38 +17,53 @@
 
     <!-- box icons -->
     <link
-      rel="preload"
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
     />
-    <noscript
-      ><link
-        rel="stylesheet"
-        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-    /></noscript>
 
     <!-- custom css -->
-    <link
-      rel="preload"
-      href="css/style.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript><link rel="stylesheet" href="css/style.css" /></noscript>
+    <link rel="stylesheet" href="./css/style.css" />
 
     <!-- icon -->
     <link rel="shortcut icon" href="./logo.ico" type="image/x-icon" />
 
     <!-- preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://unpkg.com" />
     <link
       rel="preload"
-      as="font"
-      href="https://unpkg.com/boxicons@2.1.4/fonts/boxicons.woff2"
-      type="font/woff2"
-      crossorigin
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+      as="style"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preload" href="./css/style.css" as="style" />
+    <link
+      rel="preload"
+      fetchpriority="high"
+      as="image"
+      href="./images/hero.webp"
+      type="image/webp"
+    />
+    <link
+      rel="preload"
+      fetchpriority="high"
+      as="image"
+      href="./images/about.webp"
+      type="image/webp"
+    />
+    <link
+      rel="preload"
+      fetchpriority="high"
+      as="image"
+      href="./images/baron.webp"
+      type="image/webp"
+    />
+    <link
+      rel="preload"
+      fetchpriority="high"
+      as="image"
+      href="./images/seabook.webp"
+      type="image/webp"
+    />
   </head>
 
   <body>
@@ -69,9 +84,9 @@
       <!-- hero section design -->
       <section class="home" id="home">
         <div class="home-content">
-          <h3>Hello, It's me</h3>
+          <h2>Hello, It's me</h2>
           <h1>Revi Wardana Putra</h1>
-          <h3>And I'am a <span class="multiple-text"></span></h3>
+          <h2>And I'am a <span class="multiple-text"></span></h2>
           <p>
             I am an IT enthusiast with high ambition in developing myself in the
             field of information technology.
@@ -103,14 +118,26 @@
           >
         </div>
         <div class="hero-image">
-          <img src="images/hero.webp" width="425" height="425" alt="" />
+          <img
+            src="images/hero.webp"
+            alt=""
+            width="425"
+            height="450"
+            loading="lazy"
+          />
         </div>
       </section>
 
       <!-- about section design -->
       <section class="about" id="about">
         <div class="about-img">
-          <img src="./images/about.webp" alt="" width="425" height="425" />
+          <img
+            src="./images/about.webp"
+            alt=""
+            width="425"
+            height="425"
+            loading="lazy"
+          />
         </div>
         <div class="about-content">
           <h2 class="heading">About <span>Me</span></h2>
@@ -170,9 +197,15 @@
           </div>
         </div> -->
           <div class="portfolio-box">
-            <img src="./images/baron.webp" alt="" width="314" height="209" />
+            <img
+              src="./images/baron.webp"
+              alt=""
+              width="314"
+              height="209"
+              loading="lazy"
+            />
             <div class="portfolio-layer">
-              <h4>Desktop (Flutter)</h4>
+              <h3>Desktop (Flutter)</h3>
               <p>Reservation app for canteen of university.</p>
               <a
                 href="https://github.com/reviwh/baron-barak-online"
@@ -185,7 +218,13 @@
             </div>
           </div>
           <div class="portfolio-box">
-            <img src="./images/seabook.webp" alt="" width="314" height="209" />
+            <img
+              src="./images/seabook.webp"
+              alt=""
+              width="314"
+              height="209"
+              loading="lazy"
+            />
             <div class="portfolio-layer">
               <h4>Mobile (Design)</h4>
               <p>
@@ -248,12 +287,12 @@
     </footer>
 
     <!-- scroll reveal -->
-    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@latest/dist/scrollreveal.min.js"></script>
 
     <!-- typed js -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://unpkg.com/typed.js@latest/dist/typed.umd.js"></script>
 
     <!-- custom js -->
-    <script src="js/script.min.js"></script>
+    <script src="js/script.js" defer></script>
   </body>
 </html>

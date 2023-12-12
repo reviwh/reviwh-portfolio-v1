@@ -1,12 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
-@font-face {
-    font-family: boxicons;
-    font-style: normal;
-    src: url(https://unpkg.com/boxicons@2.1.4/fonts/boxicons.woff2) format('woff2');
-    font-display: swap;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -38,6 +31,7 @@ html {
 }
 
 body {
+    height: 100%;
     background: var(--bg-color);
     color: var(--text-color);
 }
@@ -129,12 +123,12 @@ section {
     }
 }
 
-.home-content h3 {
+.home-content h2 {
     font-size: 3.2rem;
     font-weight: 700;
 }
 
-.home-content h3:nth-of-type(2) {
+.home-content h2:nth-of-type(2) {
     margin-bottom: 2rem;
 }
 
@@ -324,7 +318,7 @@ span {
     transform: translateY(0);
 }
 
-.portfolio-layer h4 {
+.portfolio-layer h3 {
     font-size: 3rem;
 }
 
@@ -478,7 +472,7 @@ span {
         padding: 0 2rem;
     }
 
-    .portfolio-layer h4 {
+    .portfolio-layer h3 {
         font-size: 2.4rem;
     }
 
@@ -525,7 +519,7 @@ span {
         text-align: center;
     }
 
-    .home-content h3 {
+    .home-content h2 {
         font-size: 2rem;
     }
 
@@ -595,7 +589,7 @@ span {
         padding: 0 6rem;
     }
 
-    .portfolio-layer h4 {
+    .portfolio-layer h3 {
         font-size: 3.2rem;
     }
 
@@ -628,7 +622,7 @@ span {
         padding: 0 2rem;
     }
 
-    .portfolio-layer h4 {
+    .portfolio-layer h3 {
         font-size: 2.4rem;
     }
 
