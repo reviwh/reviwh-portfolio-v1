@@ -1,12 +1,14 @@
-<script>
+<script lang="ts">
+  import HeroImage from "$lib/assets/images/hero.webp?enhanced";
   import { onMount } from "svelte";
   import Icon from "@iconify/svelte";
 
-  let typedText = "";
-  let typedIndex = 0;
-  let currentStringIndex = 0;
-  let isCursorMoving = false;
-  let isDeleting = false;
+  let typedText = $state("");
+  let typedIndex = $state(0);
+  let currentStringIndex = $state(0);
+  let isCursorMoving = $state(false);
+  let isDeleting = $state(false);
+
   const strings = [
     "Fresh Graduated",
     "Software Engineer",
@@ -62,7 +64,7 @@
     <h1 class="text-5xl md:text-6xl font-bold mt-3">Revi Wardana Putra</h1>
     <h2 class="text-2xl md:text-3xl mt-4">
       And I'm a <span
-        class="text-main {isCursorMoving
+        class="text-primary {isCursorMoving
           ? 'typed-text'
           : 'typed-text-blinking'}">{typedText}</span
       >
@@ -119,18 +121,21 @@
   </div>
 
   <div class="flex-1 flex justify-center md:justify-end">
-    <img
-      src="/images/hero.webp"
+    <enhanced:img
+      src={HeroImage}
       alt="Hero"
-      class="w-72 h-72 md:w-[420px] md:h-[420px] object-contain animate-float"
+      sizes="(max-width: 768px) 288px, 420px"
+      class="w-72 md:w-96 aspect-square object-contain animate-float"
       loading="lazy"
     />
   </div>
 </section>
 
 <style lang="postcss">
+  @reference "#layout.css";
+
   img {
-    filter: drop-shadow(0 0 1rem var(--color-main));
+    filter: drop-shadow(0 0 1rem var(--color-primary));
   }
 
   .animate-float {
@@ -142,7 +147,7 @@
     font-family: "JetBrains Mono", monospace;
     display: inline-block;
     margin-left: 8px;
-    text-shadow: 0 0 1rem var(--color-main);
+    text-shadow: 0 0 1rem var(--color-primary);
   }
 
   .typed-text::after,
@@ -179,11 +184,11 @@
     }
   }
   .social-button {
-    @apply w-11 h-11 flex items-center justify-center border border-main rounded-full text-main hover:bg-main hover:text-bg transition;
+    @apply w-11 h-11 flex items-center justify-center border border-primary rounded-full text-primary hover:bg-primary hover:text-background transition;
   }
 
   .social-button:hover {
-    @apply bg-main text-bg;
-    box-shadow: 0 0 1rem #007bff;
+    @apply bg-primary text-background;
+    box-shadow: 0 0 1rem var(--color-primary);
   }
 </style>

@@ -8,14 +8,16 @@
   import Contact from "../components/Contact.svelte";
   import Footer from "../components/Footer.svelte";
 
-  export let data: {
-    title: string;
-    description: string;
-    canonical: string;
-    heroImage: string;
-  };
+  const { data } = $props<{
+    data: {
+      title: string;
+      description: string;
+      canonical: string;
+      heroImage: string;
+    };
+  }>();
 
-  $: schema = {
+  const schema = $derived({
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Revi Wardana Putra",
@@ -26,11 +28,11 @@
     ],
     jobTitle: "Software Developer",
     image: data.heroImage,
-  };
+  });
 
-  let isMenuOpen = false;
-  let isSticky = false;
-  let activeSection = "home";
+  let isMenuOpen = $state(false);
+  let isSticky = $state(false);
+  let activeSection = $state("home");
 
   const SECTION_OFFSET = 150;
   const STICKY_THRESHOLD = 80;
@@ -107,13 +109,13 @@
   </script>
 </svelte:head>
 
-<div class="bg-bg text-white min-h-screen">
+<div class="bg-background text-white min-h-screen">
   <Header
     {isMenuOpen}
     {isSticky}
     {activeSection}
-    on:toggleMenu={toggleMenu}
-    on:navClick={handleNavClick}
+    onToggleMenu={toggleMenu}
+    onNavClick={handleNavClick}
   />
 
   <main class="pt-24">

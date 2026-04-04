@@ -1,30 +1,42 @@
 {
-  "name": "reviwh-portfolio-v1",
-  "private": true,
-  "version": "1.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "sync": "svelte-kit sync",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
-  },
-  "devDependencies": {
-    "@sveltejs/adapter-static": "^2.0.0",
-    "@sveltejs/enhanced-img": "^0.10.4",
-    "@sveltejs/kit": "^2.0.0",
-    "@sveltejs/vite-plugin-svelte": "^3.1.0",
-    "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.31",
-    "svelte": "^4.2.8",
-    "svelte-check": "^3.6.2",
-    "svelte-preprocess": "^5.0.0",
-    "tailwindcss": "^3.4.3",
-    "typescript": "^5.3.3",
-    "vite": "^5.4.21"
-  },
-  "dependencies": {
-    "@iconify/svelte": "^4.2.0"
-  }
+	"name": "reviwh-portfolio-v1",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"license": "MIT",
+	"author": "Revi Wardana Putra",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "eslint ."
+	},
+	"devDependencies": {
+		"@eslint/compat": "^2.0.3",
+		"@eslint/js": "^10.0.1",
+		"@sveltejs/adapter-auto": "^7.0.0",
+		"@sveltejs/enhanced-img": "^0.10.4",
+		"@sveltejs/kit": "^2.50.2",
+		"@sveltejs/vite-plugin-svelte": "^6.2.4",
+		"@tailwindcss/vite": "^4.1.18",
+		"@types/node": "^22",
+		"eslint": "^10.0.3",
+		"eslint-plugin-svelte": "^3.15.2",
+		"globals": "^17.4.0",
+		"svelte": "^5.54.0",
+		"svelte-check": "^4.4.2",
+		"tailwindcss": "^4.1.18",
+		"typescript": "^5.9.3",
+		"typescript-eslint": "^8.57.0",
+		"vite": "^7.3.1"
+	},
+	"dependencies": {
+		"@iconify/svelte": "^5.2.1"
+	},
+	"imports": {
+		"#layout.css": "./src/routes/layout.css" 
+	}
 }

@@ -1,14 +1,17 @@
-<section id="about" class="bg-second px-6 md:px-10 py-28">
+<script lang="ts">
+  import AboutImage from "$lib/assets/images/about.webp?enhanced";
+</script>
+
+<section id="about" class="bg-secondary px-6 md:px-10 py-28">
   <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
-    <img
-      src="/images/about.webp"
+    <enhanced:img
+      src={AboutImage}
       alt="About me"
-      width="320"
-      height="320"
-      class="w-80 md:w-96 rounded-2xl"
+      sizes="(max-width: 768px) 320px, 384px"
+      class="w-72 md:w-96 img aspect-square object-contain"
       loading="lazy"
     />
-    <div class="text-white">
+    <div class="flex-1 text-white">
       <h2 class="text-4xl md:text-5xl font-bold mb-6">
         About <span class="text-main">Me</span>
       </h2>
@@ -32,7 +35,9 @@
 </section>
 
 <style lang="postcss">
+  @reference "#layout.css";
+
   img {
-    filter: drop-shadow(0 0 1rem var(--color-main));
+    filter: drop-shadow(0 0 1rem var(--color-primary));
   }
 </style>

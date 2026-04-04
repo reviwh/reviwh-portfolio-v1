@@ -7,7 +7,7 @@
 
 ## About
 
-A modern, fully responsive portfolio website showcasing my work and expertise as a software developer. Built with **SvelteKit** and **Tailwind CSS**, featuring an elegant dark theme with cyan accents, smooth animations, and engaging interactions.
+A modern, fully responsive portfolio website showcasing my work and expertise as a software developer. Built with **SvelteKit** and **Tailwind CSS**, featuring an elegant dark theme with cyan accents, smooth animations, and engaging interactions. Utilizes the latest **Svelte 5** with runes for modern reactive programming.
 
 🌐 **Live Website:** [https://portfolio-reviwh.vercel.app](https://portfolio-reviwh.vercel.app)
 
@@ -27,37 +27,53 @@ A modern, fully responsive portfolio website showcasing my work and expertise as
 
 **Frontend Framework:**
 
-- **SvelteKit 2.0** - Server-side rendering and static generation framework
-- **Svelte 4.2** - Reactive UI component framework
-- **Vite 5.4** - Next-generation build tool for lightning-fast development
+- **SvelteKit 2.50.2** - Server-side rendering and static generation framework
+- **Svelte 5.54.0** - Reactive UI component framework with runes
+- **Vite 7.3.1** - Next-generation build tool for lightning-fast development
 
 **Styling & Design:**
 
-- **Tailwind CSS 3.4** - Utility-first CSS framework
-- **PostCSS 8.4** - CSS transformation and optimization
+- **Tailwind CSS 4.1.18** - Utility-first CSS framework
 - **Custom CSS Variables** - For cohesive theming and responsive design
 
 **Icons & Assets:**
 
-- **@iconify/svelte 4.2** - Material Design Icons library
+- **@iconify/svelte 5.2.1** - Material Design Icons library
+- **@sveltejs/enhanced-img 0.10.4** - Enhanced image optimization
 - **WebP Images** - Optimized image formats for faster loading
 
 **Development Tools:**
 
-- **TypeScript 5.3** - Static type checking for safer code
-- **svelte-check 3.6** - Svelte compiler validation and diagnostics
+- **TypeScript 5.9.3** - Static type checking for safer code
+- **svelte-check 4.4.2** - Svelte compiler validation and diagnostics
+- **ESLint 10.0.3** - Code linting and formatting
 
 **Deployment:**
 
-- **@sveltejs/adapter-static 2.0** - Static site generation and deployment
+- **@sveltejs/adapter-auto 7.0.0** - Automatic adapter selection for deployment
 - **Vercel** - Hosting platform for production deployment
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- Node.js v16 or higher
+- **Node.js v25.9.0 or higher** - [Download from nodejs.org](https://nodejs.org/)
 - npm, yarn, pnpm, or bun package manager
+
+### Node Version Management
+
+This project uses Node.js v25.9.0. You can use nvm to switch to the correct version:
+
+```bash
+# Install Node.js v25.9.0 using nvm
+nvm install 25.9.0
+
+# Use the correct version
+nvm use 25.9.0
+
+# Optional: set as default for this shell/project
+nvm alias default 25.9.0
+```
 
 ### Installation & Development
 
@@ -74,7 +90,32 @@ A modern, fully responsive portfolio website showcasing my work and expertise as
    npm install
    ```
 
-3. **Start the development server:**
+3. **Set up Environment Variables**
+
+   This project requires the following environment variables:
+
+   | Variable                  | Description          | Example                   |
+   | ------------------------- | -------------------- | ------------------------- |
+   | VITE_HOSTNAME             | Hostname             | localhost                 |
+   | VITE_WEB3FORMS_ACCESS_KEY | Web3Forms access key | your-web3forms-access-key |
+
+   **Setup:**
+   1. Copy `.env.example` to `.env`
+
+      ```bash
+      cp .env.example .env
+      ```
+
+   2. Fill the real values in `.env`:
+
+      ```env
+      VITE_HOSTNAME=localhost
+      VITE_WEB3FORMS_ACCESS_KEY=your-real-web3forms-access-key
+      ```
+
+      > **Note**: `.env` contains secrets, so do **not** commit it to the repository.
+
+4. **Start the development server:**
 
    ```bash
    npm run dev
@@ -82,7 +123,7 @@ A modern, fully responsive portfolio website showcasing my work and expertise as
 
    Open [http://localhost:5173](http://localhost:5173) in your browser. The page will auto-reload as you make changes.
 
-4. **Build for production:**
+5. **Build for production:**
 
    ```bash
    npm run build
@@ -90,7 +131,7 @@ A modern, fully responsive portfolio website showcasing my work and expertise as
 
    This generates a static site in the `build/` directory ready for deployment.
 
-5. **Preview production build (optional):**
+6. **Preview production build (optional):**
    ```bash
    npm run preview
    ```
@@ -101,41 +142,33 @@ A modern, fully responsive portfolio website showcasing my work and expertise as
 ```
 reviwh-portfolio-v1/
 ├── src/
-│   ├── app.html                 # HTML template
-│   ├── app.css                  # Global styles & Tailwind imports
-│   ├── main.js                  # Legacy entry point
-│   ├── components/
-│   │   ├── Header.svelte       # Navigation with mobile menu
-│   │   ├── Home.svelte         # Hero section with typing animation
-│   │   ├── About.svelte        # About me & background
-│   │   ├── Skills.svelte       # Technical skills showcase
-│   │   ├── Portfolio.svelte    # Project gallery
-│   │   ├── Contact.svelte      # Contact form with Web3Forms
-│   │   └── Footer.svelte       # Footer with scroll-to-top
-│   └── routes/
-│       ├── +layout.svelte      # Root layout wrapper
-│       └── +page.svelte        # Home page
-├── static/
-│   └── images/                 # Image assets (about.webp, hero.webp, etc.)
-├── svelte.config.js            # SvelteKit + Static adapter config
-├── vite.config.js              # Vite configuration
-├── tailwind.config.cjs         # Tailwind CSS theme customization
-├── postcss.config.cjs          # PostCSS plugins configuration
+│   ├── components/             # UI Components
+│   ├── lib/                    # Utilities, assets, and shared modules
+│   ├── routes/                 # SvelteKit pages and layouts
+│   ├── app.html                # HTML template
+│   ├── app.d.ts                # SvelteKit app type definitions
+│   └── global.d.ts             # Global type definitions
+├── static/                     # Public static files
+├── svelte.config.js            # SvelteKit configuration
+├── vite.config.ts              # Vite configuration
+├── eslint.config.js            # ESLint configuration
 ├── tsconfig.json               # TypeScript compiler options
 ├── package.json                # Dependencies and scripts
 ├── .env                        # Environment variables
-└── LICENSE                     # MIT License
+└── LICENSE                     # License
 ```
 
 ## 📜 Available Scripts
 
-| Script            | Purpose                                                    |
-| ----------------- | ---------------------------------------------------------- |
-| `npm run dev`     | Start development server with HMR at http://localhost:5173 |
-| `npm run build`   | Build static site for production in `build/` directory     |
-| `npm run preview` | Preview production build locally                           |
-| `npm run sync`    | Regenerate SvelteKit type definitions                      |
-| `npm run check`   | Type-check all TypeScript code                             |
+| Script                | Purpose                                                    |
+| --------------------- | ---------------------------------------------------------- |
+| `npm run dev`         | Start development server with HMR at http://localhost:5173 |
+| `npm run build`       | Build static site for production in `build/` directory     |
+| `npm run preview`     | Preview production build locally                           |
+| `npm run prepare`     | Regenerate SvelteKit type definitions                      |
+| `npm run check`       | Type-check all TypeScript code                             |
+| `npm run check:watch` | Type-check with watch mode                                 |
+| `npm run lint`        | Run ESLint for code linting                                |
 
 ## 🎨 Design System
 
@@ -160,24 +193,6 @@ reviwh-portfolio-v1/
 - Extensive hover animations and smooth transitions
 - Mobile hamburger menu with smooth animations
 
-## 🌟 Featured Projects
-
-The portfolio showcases 6 featured projects spanning multiple technologies:
-
-1. **RASAKU** - Kotlin Mobile App for traditional dish classification using AI
-2. **Animanga** - Kotlin Mobile App for anime database and information
-3. **Baron** - Flutter Desktop Application for canteen reservation system
-4. **Mind** - Unity Game - 2D platformer game
-5. **Animania** - PHP/Laravel Web Application for anime streaming
-6. **+8 more projects** - Additional portfolio pieces available on demand
-
-Each project features:
-
-- Live preview with hover overlay effects
-- Technology stack information
-- Project description and links
-- Responsive image galleries
-
 ## 📞 Get In Touch
 
 Feel free to reach out through any of these channels:
@@ -198,4 +213,4 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 You are free to use, modify, and distribute this code with proper attribution.
 
-**Copyright © 2023 Revi Wardana Putra**
+**© 2023 Revi Wardana Putra.**
