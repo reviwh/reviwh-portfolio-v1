@@ -1,10 +1,10 @@
 <script>
-import RasakuImage from "$lib/assets/images/rasaku.gif?enhanced";
-import AnimangaImage from "$lib/assets/images/animanga.webp?enhanced";
-import BaronImage from "$lib/assets/images/baron.webp?enhanced";
-import MindImage from "$lib/assets/images/mind.webp?enhanced";
-import AnimanImage from "$lib/assets/images/animania.webp?enhanced";
-import SeabookImage from "$lib/assets/images/seabook.webp?enhanced";
+  import RasakuImage from "$lib/assets/images/rasaku.gif?w=430&enhanced";
+  import AnimangaImage from "$lib/assets/images/animanga.webp?w=430&enhanced";
+  import BaronImage from "$lib/assets/images/baron.webp?w=430&enhanced";
+  import MindImage from "$lib/assets/images/mind.webp?w=430&enhanced";
+  import AnimanImage from "$lib/assets/images/animania.webp?w=430&enhanced";
+  import SeabookImage from "$lib/assets/images/seabook.webp?w=430&enhanced";
 
   const projects = [
     {
@@ -12,7 +12,7 @@ import SeabookImage from "$lib/assets/images/seabook.webp?enhanced";
       image: RasakuImage,
       title: "Mobile (Kotlin)",
       description:
-        "RASAKU is an app that will utilize classification techniques to identify various traditional dishes, providing users with detailed information such as the food's name, historical background, and recipes",
+        "RASAKU is a classification-based app for recognizing traditional dishes and delivering their names, history, and recipes.",
     },
     {
       id: 2,
@@ -48,17 +48,20 @@ import SeabookImage from "$lib/assets/images/seabook.webp?enhanced";
   ];
 </script>
 
-<section id="portfolio" class="bg-secondary px-6 md:px-10 py-28">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-4xl md:text-5xl font-bold text-center text-white mb-12">
+<section id="portfolio" class="bg-secondary">
+  <div class="wrapper">
+    <h2
+      class="text-4xl md:text-5xl font-bold text-center text-white mb-8 md:mb-16"
+    >
       Latest <span class="text-primary">Project</span>
     </h2>
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div class="w-full grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {#each projects as project (project.id)}
         <article class="portfolio">
           <enhanced:img
             src={project.image}
             alt={project.title}
+            sizes="(min-width: 640px) 430px, 100vw"
             class="portfolio-image"
             loading="lazy"
           />
@@ -66,12 +69,12 @@ import SeabookImage from "$lib/assets/images/seabook.webp?enhanced";
             <div
               class="portfolio-description flex flex-col justify-center items-center text-center gap-3"
             >
-              <h3 class="text-6xl font-bold">+8</h3>
+              <h3 class="text-6xl font-semibold">+8</h3>
             </div>
           {:else}
             <div class="portfolio-description">
-              <h3 class="text-2xl font-bold">{project.title}</h3>
-              <p class="text-sm font-semibold">{project.description}</p>
+              <h3 class="text-2xl font-semibold">{project.title}</h3>
+              <p class="text-base">{project.description}</p>
             </div>
           {/if}
         </article>
@@ -85,6 +88,7 @@ import SeabookImage from "$lib/assets/images/seabook.webp?enhanced";
 
   .portfolio {
     @apply relative rounded-2xl overflow-hidden shadow-lg border border-background/50;
+    aspect-ratio: 1.5;
     cursor: pointer;
   }
 
@@ -94,7 +98,8 @@ import SeabookImage from "$lib/assets/images/seabook.webp?enhanced";
   }
 
   .portfolio-image {
-    @apply w-full h-56 rounded-2xl object-cover transition-all duration-500;
+    @apply w-full h-full rounded-2xl object-cover transition-all duration-500;
+    aspect-ratio: 1.5;
   }
 
   .portfolio-description {

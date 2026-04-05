@@ -7,5 +7,10 @@ export default defineConfig({
     plugins: [
         enhancedImages(),
         tailwindcss(),
-        sveltekit()]
+        sveltekit()
+    ],
+    server: {
+        host: true,
+        port: 5173
+    }
 });

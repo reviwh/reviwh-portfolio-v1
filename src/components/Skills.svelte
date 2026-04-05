@@ -27,29 +27,37 @@
       id: 3,
       title: "Graphic Design",
       icon: "mdi:palette",
-      primary: "Adobe Illustrator, Figma",
-      details: "",
+      primary: "UI/UX Design",
+      details: "Adobe Illustrator, Figma",
     },
   ];
 </script>
 
-<section id="skills" class="bg-background py-28 px-6 md:px-10">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-4xl md:text-5xl text-center font-bold text-white mb-16">
+<section id="skills" class="bg-background">
+  <div class="wrapper flex flex-col items-center">
+    <h2
+      class="text-3xl md:text-5xl text-center font-bold text-white mb-8 md:mb-16"
+    >
       Obtained <span class="text-primary">Skills</span>
     </h2>
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+    <div class="w-full grid gap-6 grid-cols-1 md:grid-cols-2 2xl:grid-cols-4">
       {#each skills as skill (skill.id)}
         <article
           class="border border-background/50 rounded-2xl bg-secondary p-6 transition-all transform"
         >
-          <div
-            class="h-16 w-16 flex items-center justify-center rounded-full bg-primary/10 text-primary mb-5"
-          >
-            <Icon icon={skill.icon} width="30" height="30" />
+          <div class="flex items-start gap-4 mb-3">
+            <div
+              class="h-14 w-14 flex items-center justify-center rounded-full bg-primary/10 text-primary"
+            >
+              <Icon icon={skill.icon} width="30" height="30" />
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl md:text-2xl font-semibold text-white mb-1">
+                {skill.title}
+              </h3>
+              <p class="text-base text-gray-200 font-medium">{skill.primary}</p>
+            </div>
           </div>
-          <h3 class="text-2xl font-semibold text-white mb-2">{skill.title}</h3>
-          <p class="text-base text-gray-200 font-medium">{skill.primary}</p>
           {#if skill.details}
             <p class="text-sm text-gray-400 mt-2">{skill.details}</p>
           {/if}

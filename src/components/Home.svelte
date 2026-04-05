@@ -1,7 +1,35 @@
 <script lang="ts">
-  import HeroImage from "$lib/assets/images/hero.webp?enhanced";
+  import HeroImage from "$lib/assets/images/hero.webp?w=500;360;280&enhanced";
   import { onMount } from "svelte";
   import Icon from "@iconify/svelte";
+
+  const socialLinks = [
+    {
+      href: "https://web.facebook.com/reviwh",
+      ariaLabel: "facebook",
+      icon: "mdi:facebook",
+    },
+    {
+      href: "https://www.instagram.com/reviwh_",
+      ariaLabel: "instagram",
+      icon: "mdi:instagram",
+    },
+    {
+      href: "https://www.linkedin.com/in/revi-wardana-putra-5b207a229/",
+      ariaLabel: "linkedin",
+      icon: "mdi:linkedin",
+    },
+    {
+      href: "https://github.com/reviwh",
+      ariaLabel: "github",
+      icon: "mdi:github",
+    },
+    {
+      href: "mailto:reviwh2@gmailcom",
+      ariaLabel: "email",
+      icon: "mdi:email",
+    },
+  ];
 
   let typedText = $state("");
   let typedIndex = $state(0);
@@ -53,81 +81,58 @@
   });
 </script>
 
-<section
-  id="home"
-  class="min-h-screen px-6 md:px-10 py-28 flex flex-col md:flex-row items-center gap-10"
->
-  <div class="flex-1 text-center md:text-left">
-    <h2 class="text-3xl md:text-4xl font-semibold text-white">
-      Hello, It's me
-    </h2>
-    <h1 class="text-5xl md:text-6xl font-bold mt-3">Revi Wardana Putra</h1>
-    <h2 class="text-2xl md:text-3xl mt-4">
-      And I'm a <span
-        class="text-primary {isCursorMoving
-          ? 'typed-text'
-          : 'typed-text-blinking'}">{typedText}</span
+<section id="home" class="bg-background">
+  <div
+    class="wrapper flex flex-col-reverse md:flex-row items-center md:justify-between gap-6"
+  >
+    <div class="flex-1 text-center md:text-left">
+      <h2 class="text-xl md:text-3xl font-semibold text-white">
+        Hello, It's me
+      </h2>
+      <h1 class="text-3xl md:text-5xl font-bold mt-3">Revi Wardana Putra</h1>
+      <h2 class="text-lg md:text-2xl mt-4">
+        and I'm a <span
+          class="text-primary {isCursorMoving
+            ? 'typed-text'
+            : 'typed-text-blinking'}">{typedText}</span
+        >
+      </h2>
+      <p
+        class="mt-6 text-base md:text-lg text-gray-200 leading-relaxed max-w-2xl"
       >
-    </h2>
-    <p
-      class="mt-6 text-base md:text-lg text-gray-200 leading-relaxed max-w-2xl"
-    >
-      I am an IT enthusiast with high ambition in developing myself in the field
-      of information technology.
-    </p>
-    <div class="mt-6 flex justify-center md:justify-start gap-3">
+        I am an IT enthusiast with high ambition in developing myself in the
+        field of information technology.
+      </p>
+      <div class="mt-6 flex justify-center md:justify-start gap-3">
+        {#each socialLinks as socialLink (socialLink.ariaLabel)}
+          <a
+            href={socialLink.href}
+            aria-label={socialLink.ariaLabel}
+            class="social-button"
+            target="_blank"
+            rel="external noopener noreferrer"
+          >
+            <Icon icon={socialLink.icon} width="20" height="20" />
+          </a>
+        {/each}
+      </div>
       <a
-        href="https://web.facebook.com/reviwh"
-        aria-label="facebook"
-        class="social-button"
+        href="https://www.cakeresume.com/pdf/s--5FWHNx0VmieyRIpcVqo2AQ--/OAAwV.pdf"
+        class="btn-main mt-8"
       >
-        <Icon icon="mdi:facebook" width="20" height="20" />
-      </a>
-      <a
-        href="https://www.instagram.com/reviwh_"
-        aria-label="instagram"
-        class="social-button"
-      >
-        <Icon icon="mdi:instagram" width="20" height="20" />
-      </a>
-      <a
-        href="https://www.linkedin.com/in/revi-wardana-putra-5b207a229/"
-        aria-label="linkedin"
-        class="social-button"
-      >
-        <Icon icon="mdi:linkedin" width="20" height="20" />
-      </a>
-      <a
-        href="https://github.com/reviwh"
-        aria-label="github"
-        class="social-button"
-      >
-        <Icon icon="mdi:github" width="20" height="20" />
-      </a>
-      <a
-        href="mailto:reviwh2@gmail.com"
-        aria-label="email"
-        class="social-button"
-      >
-        <Icon icon="mdi:email" width="20" height="20" />
+        Download CV
       </a>
     </div>
-    <a
-      href="https://www.cakeresume.com/pdf/s--5FWHNx0VmieyRIpcVqo2AQ--/OAAwV.pdf"
-      class="btn-main mt-8"
-    >
-      Download CV
-    </a>
-  </div>
 
-  <div class="flex-1 flex justify-center md:justify-end">
-    <enhanced:img
-      src={HeroImage}
-      alt="Hero"
-      sizes="(max-width: 768px) 288px, 420px"
-      class="w-72 md:w-96 aspect-square object-contain animate-float"
-      loading="lazy"
-    />
+    <div class="flex-1 flex justify-center md:justify-end">
+      <enhanced:img
+        src={HeroImage}
+        alt="Hero"
+        sizes="(min-width: 1024px) 500px, (min-width: 768px) 360px, (min-width: 640px) 500px, 100vw"
+        class="w-125 md:w-[35vw] md:max-w-125 aspect-square object-contain animate-float"
+        loading="lazy"
+      />
+    </div>
   </div>
 </section>
 

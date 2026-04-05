@@ -1,10 +1,10 @@
 interface HCaptchaOptions {
-  sitekey: string;
-  size?: "compact" | "normal";
-  theme?: "light" | "dark";
-  callback?: (token: string) => void;
-  "error-callback"?: () => void;
-  "expired-callback"?: () => void;
+    sitekey: string;
+    size?: "compact" | "normal";
+    theme?: "light" | "dark";
+    callback?: (token: string) => void;
+    "error-callback"?: () => void;
+    "expired-callback"?: () => void;
 }
 
 declare global {
