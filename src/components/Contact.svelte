@@ -80,12 +80,14 @@
   });
 </script>
 
-<section id="contact" class="px-6 md:px-10 py-28 bg-background">
-  <div class="max-w-4xl mx-auto p-8 md:p-12">
-    <h2 class="text-4xl md:text-5xl font-bold text-center text-white mb-8">
+<section id="contact" class="bg-background">
+  <div class="wrapper">
+    <h2
+      class="text-4xl md:text-5xl font-bold text-center text-white mb-8 md:mb-16"
+    >
       Contact <span class="text-primary">Me</span>
     </h2>
-    <form onsubmit={handleSubmit} class="space-y-3">
+    <form onsubmit={handleSubmit} class="space-y-3 max-w-3xl mx-auto">
       <input
         type="text"
         name="website"
@@ -94,27 +96,29 @@
         autocomplete="off"
       />
 
-      <input placeholder="Name" name="name" bind:value={name} required />
-      <input
-        type="email"
-        placeholder="Email Address"
-        name="email"
-        bind:value={email}
-        required
-      />
-      <input
-        placeholder="Email Subject"
-        name="subject"
-        bind:value={subject}
-        required
-      />
-      <textarea
-        rows="6"
-        placeholder="Your Message"
-        name="message"
-        bind:value={message}
-        required
-      ></textarea>
+      <div class="w-full flex flex-col gap-3 px-3">
+        <input placeholder="Name" name="name" bind:value={name} required />
+        <input
+          type="email"
+          placeholder="Email Address"
+          name="email"
+          bind:value={email}
+          required
+        />
+        <input
+          placeholder="Email Subject"
+          name="subject"
+          bind:value={subject}
+          required
+        />
+        <textarea
+          rows="6"
+          placeholder="Your Message"
+          name="message"
+          bind:value={message}
+          required
+        ></textarea>
+      </div>
       <div class="w-full flex items-center justify-center">
         <div
           class="h-captcha"
@@ -123,8 +127,12 @@
           data-theme="dark"
         ></div>
       </div>
-      <div class="flex w-full pt-2 items-center justify-center">
-        <button type="submit" class="btn-main" disabled={isSubmitting}>
+      <div class="flex w-full p-3 items-center justify-center">
+        <button
+          type="submit"
+          class="btn-main w-full md:w-fit"
+          disabled={isSubmitting}
+        >
           {isSubmitting ? "Sending..." : "Send Message"}
         </button>
       </div>
@@ -168,7 +176,7 @@
 
   input,
   textarea {
-    @apply w-full p-4 rounded-xl bg-secondary border border-background/50 text-white focus:outline-none focus:ring-2 focus:ring-primary transition;
+    @apply p-4 w-full rounded-xl bg-secondary border border-background/50 text-white focus:outline-none focus:ring-2 focus:ring-primary transition;
   }
 
   input::placeholder,
